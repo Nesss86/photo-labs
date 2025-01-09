@@ -1,27 +1,50 @@
 .photo-list__item {
   margin: 24px;
-  padding: 8px;
-  border-width: 0.5px;
-  border-color: lightgray;
-  border-style: solid;
-  border-radius: 8px;
+  padding: 10px;
+  border: 8px solid white; /* Thick white border */
+  border-radius: 12px; /* Rounded corners */
   max-width: fit-content;
+  position: relative; /* Needed for pseudo-elements */
+  background-color: #fff; /* White background */
+  box-shadow: 0 0 0 1px #d3d3d3; /* Thin grey outline */
+
+  /* Add independent corner stripes */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #d3d3d3; /* Grey stripe color */
+  }
+
+  /* Vertical Stripe: Positioned near the top-left corner of the container */
+  &::before {
+    top: -10px; /* Positioned at the container's top */
+    left: 20px; /* Offset inward from the left edge of the container */
+    width: 18px; /* Thickness of the stripe */
+    height: 50px; /* Length of the vertical stripe */
+  }
+
+  /* Horizontal Stripe: Positioned near the top-left corner of the container */
+  &::after {
+    top: 20px; /* Offset downward from the container's top */
+    left: -10px; /* Positioned at the container's left */
+    width: 50px; /* Length of the horizontal stripe */
+    height: 18px; /* Thickness of the stripe */
+  }
 }
 
 .photo-list__image {
-  user-select: none;
+  border-radius: 10px; /* Rounded corners for the photo */
   width: 300px;
   height: 200px;
   object-fit: cover;
+  position: relative;
+  z-index: 2; /* Ensure the photo appears above the stripes */
 }
 
-.photo-list__image {
-  border-radius: 8px 8px 0px 0px;
-  user-select: none;
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-}
+
+
+
 
 .photo-list__user-profile {
   object-fit: cover;
@@ -46,3 +69,5 @@
 .photo-list__user-location {
   color: #838383;
 }
+
+
