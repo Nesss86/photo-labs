@@ -2,8 +2,7 @@ import React from 'react';
 
 import PhotoListItem from './components/PhotoListItem';
 import './App.scss';
-import { SassMap } from 'sass';
-import process from "process";
+
 
 
 const sampleDataForPhotoListItem = {
@@ -24,7 +23,7 @@ const App = () => {
       {/*Pass sample data as props*/}
       <PhotoListItem
       id={sampleDataForPhotoListItem.id}
-      location={`${sampleDataForPhotoListItem.location.city}, ${sampleDataForPhotoListItem.location.country}`}
+      location={sampleDataForPhotoListItem.location}
       imageSource={sampleDataForPhotoListItem.imageSource}
       username={sampleDataForPhotoListItem.username}
       profile={sampleDataForPhotoListItem.profile}
