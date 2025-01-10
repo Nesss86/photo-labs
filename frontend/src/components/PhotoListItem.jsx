@@ -1,9 +1,12 @@
 import React from "react";
 import "../styles/PhotoListItem.scss";
+import PhotoFavButton from "./PhotoFavButton"; // Import the favorite button component
 
 const PhotoListItem = ({ id, location, imageSource, username, profile }) => {
   return (
     <div className="photo-list__item" id={`photo-${id}`}>
+      {/* Add the favorite button positioned on top-right */}
+      <PhotoFavButton />
       <img
         className="photo-list__image"
         src={imageSource}
@@ -27,4 +30,5 @@ const PhotoListItem = ({ id, location, imageSource, username, profile }) => {
 };
 
 export default PhotoListItem;
+
 

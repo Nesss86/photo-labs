@@ -1,11 +1,11 @@
 .photo-list__item {
+  position: relative; /* Ensures child elements like the favorite button can be absolutely positioned */
   margin: 24px;
   padding: 10px;
   border: 8px solid white; /* Thick white border */
-  border-radius: 12px; /* Rounded corners */
+  border-radius: 12px;
+  background-color: #fff;
   max-width: fit-content;
-  position: relative; /* Needed for pseudo-elements */
-  background-color: #fff; /* White background */
   box-shadow: 0 0 0 1px #d3d3d3; /* Thin grey outline */
 
   /* Add independent corner stripes */
@@ -42,10 +42,6 @@
   z-index: 2; /* Ensure the photo appears above the stripes */
 }
 
-
-
-
-
 .photo-list__user-profile {
   object-fit: cover;
   border-radius: 100%;
@@ -69,5 +65,7 @@
 .photo-list__user-location {
   color: #838383;
 }
+
+
 
 
