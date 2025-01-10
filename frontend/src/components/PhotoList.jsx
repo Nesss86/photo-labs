@@ -10,11 +10,11 @@ const PhotoList = ({ photos, onToggleFav }) => {
           key={photo.id}
           id={photo.id}
           location={photo.location}
-          imageSource={photo.imageSource}
-          username={photo.username}
-          profile={photo.profile}
+          imageSource={photo.urls.regular} // Use the correct field
+          username={photo.user.name}
+          profile={photo.user.profile}
           isFav={photo.isFav}
-          onToggleFav={onToggleFav} // Pass the function here
+          onToggleFav={onToggleFav}
         />
       ))}
     </div>
@@ -22,6 +22,7 @@ const PhotoList = ({ photos, onToggleFav }) => {
 };
 
 export default PhotoList;
+
 
 
 

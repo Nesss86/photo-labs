@@ -11,7 +11,7 @@ const photo1 = {
   "user": {
     "id": "1",
     "username": "exampleuser",
-    "name": "Joe Example",
+    "name": "James Miller",
     "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
   }
 }
@@ -29,8 +29,8 @@ const photo2 = {
   "user": {
     "id": "2",
     "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "name": "Emily Carter",
+    "profile": `${process.env.PUBLIC_URL}/profile-2.jpg`
   }
 }
 
@@ -47,8 +47,8 @@ const photo3 = {
   "user": {
     "id": "3",
     "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "name": "Ethan Davis",
+    "profile": `${process.env.PUBLIC_URL}/profile-3.jpg`
   }
 }
 
@@ -66,8 +66,8 @@ const photo4 = {
     "id": "4",
     "updated_at": "2016-07-10T11:00:01-05:00",
     "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "name": "Sophia Johnson",
+    "profile": `${process.env.PUBLIC_URL}/profile-4.jpg`
   }
 }
 
@@ -84,8 +84,8 @@ const photo5 = {
   "user": {
     "id": "5",
     "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "name": "Liam Wilson",
+    "profile": `${process.env.PUBLIC_URL}/profile-5.jpg`
   }
 }
 
@@ -102,8 +102,8 @@ const photo6 =  {
   "user": {
     "id": "6",
     "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "name": "Benjamin Brown",
+    "profile": `${process.env.PUBLIC_URL}/profile-6.jpg`
   }
 }
 
@@ -120,8 +120,8 @@ const photo7 = {
   "user": {
     "id": "7",
     "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "name": "Olivia Hayes",
+    "profile": `${process.env.PUBLIC_URL}/profile-7.jpg`
   }
 }
 
@@ -138,8 +138,8 @@ const photo8 = {
   "user": {
     "id": "8",
     "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "name": "Noah Anderson",
+    "profile": `${process.env.PUBLIC_URL}/profile-8.jpg`
   }
 }
 
@@ -156,8 +156,8 @@ const photo9 = {
   "user": {
     "id": "9",
     "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "name": "Ava Thompson",
+    "profile": `${process.env.PUBLIC_URL}/profile-9.jpg`
   }
 }
 
@@ -174,8 +174,8 @@ const photo10 = {
   "user": {
     "id": "10",
     "username": "exampleuser",
-    "name": "Joe Example",
-    "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
+    "name": "Mia Robinson",
+    "profile": `${process.env.PUBLIC_URL}/profile-10.jpg`
   }
 }
 
