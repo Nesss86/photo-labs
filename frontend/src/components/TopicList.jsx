@@ -1,23 +1,23 @@
-import React from 'react';
-import TopicListItem from './TopicListItem';
-import '../styles/TopicList.scss';
+import React from "react";
+import TopicListItem from "./TopicListItem";
+import "../styles/TopicList.scss";
 
-const TopicList = ({ topics = [], activeTopic, onTopicClick }) => {
+const TopicList = ({ topics = [] }) => {
+  if (topics.length === 0) {
+    return <p className="topic-list__error">No topics available</p>;
+  }
+
   return (
     <div className="topic-list">
-      {topics.map((topic) => (
-        <TopicListItem
-          key={topic}
-          topic={topic}
-          isActive={topic === activeTopic}
-          onClick={onTopicClick}
-        />
+      {topics.map((topic, index) => (
+        <TopicListItem key={index} topic={topic} />
       ))}
     </div>
   );
 };
 
 export default TopicList;
+
 
 
 

@@ -2,7 +2,11 @@ import React from "react";
 import PhotoListItem from "./PhotoListItem";
 import "../styles/PhotoList.scss";
 
-const PhotoList = ({ photos }) => {
+const PhotoList = ({ photos = [] }) => {
+  if (!photos.length) {
+    return <p>No photos available.</p>; // Display a message if no photos are passed
+  }
+
   return (
     <div className="photo-list">
       {photos.map((photo) => (
