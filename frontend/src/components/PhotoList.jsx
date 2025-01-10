@@ -2,11 +2,7 @@ import React from "react";
 import PhotoListItem from "./PhotoListItem";
 import "../styles/PhotoList.scss";
 
-const PhotoList = ({ photos = [] }) => {
-  if (!photos.length) {
-    return <p>No photos available.</p>; // Display a message if no photos are passed
-  }
-
+const PhotoList = ({ photos, onToggleFav }) => {
   return (
     <div className="photo-list">
       {photos.map((photo) => (
@@ -17,6 +13,8 @@ const PhotoList = ({ photos = [] }) => {
           imageSource={photo.imageSource}
           username={photo.username}
           profile={photo.profile}
+          isFav={photo.isFav}
+          onToggleFav={onToggleFav} // Pass the function here
         />
       ))}
     </div>
@@ -24,5 +22,6 @@ const PhotoList = ({ photos = [] }) => {
 };
 
 export default PhotoList;
+
 
 

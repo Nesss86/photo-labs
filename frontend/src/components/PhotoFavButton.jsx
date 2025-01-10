@@ -1,21 +1,15 @@
-import React, { useState } from 'react';
-import FavIcon from './FavIcon';
-import '../styles/PhotoFavButton.scss';
+import React from "react";
+import FavIcon from "./FavIcon";
+import "../styles/PhotoFavButton.scss";
 
-function PhotoFavButton() {
-  const [selected, setSelected] = useState(false);
-
-  const toggleFav = () => {
-    setSelected((prev) => !prev); // Toggle the selected state
-  };
-
+const PhotoFavButton = ({ selected, onClick }) => {
   return (
-    <div className="photo-list__fav-icon" onClick={toggleFav}>
-      {/* Pass the selected state to FavIcon */}
+    <div className="photo-list__fav-icon" onClick={onClick}>
       <FavIcon selected={selected} />
     </div>
   );
-}
+};
 
 export default PhotoFavButton;
+
 

@@ -3,15 +3,17 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = ({
-  id = "0", // Default value for id
-  location = { city: "Unknown", country: "Unknown" }, // Default location
-  imageSource = "/default-image.jpg", // Default image source
-  username = "Anonymous", // Default username
-  profile = "/default-profile.jpg", // Default profile
+  id,
+  location,
+  imageSource,
+  username,
+  profile,
+  isFav,
+  onToggleFav,
 }) => {
   return (
     <div className="photo-list__item" id={`photo-${id}`}>
-      <PhotoFavButton />
+      <PhotoFavButton selected={isFav} onClick={() => onToggleFav(id)} />
       <img
         className="photo-list__image"
         src={imageSource}
@@ -35,6 +37,7 @@ const PhotoListItem = ({
 };
 
 export default PhotoListItem;
+
 
 
 
