@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import TopNavigationBar from "./components/TopNavigationBar";
-import PhotoList from "./components/PhotoList";
+import HomeRoute from "./routes/HomeRoute"; // Import the HomeRoute component
 import "./App.scss";
 
 const topics = ["Nature", "Cities", "People"]; // Example topics
@@ -34,13 +33,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <TopNavigationBar topics={topics} favCount={favCount} />
-      <PhotoList photos={photos} onToggleFav={toggleFav} /> {/* Pass toggleFav */}
+      {/* Use HomeRoute and pass necessary props */}
+      <HomeRoute topics={topics} photos={photos} favCount={favCount} onToggleFav={toggleFav} />
     </div>
   );
 };
 
 export default App;
+
 
 
 

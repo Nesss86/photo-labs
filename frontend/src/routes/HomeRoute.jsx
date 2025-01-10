@@ -1,13 +1,17 @@
-import React from 'react';
+import React from "react";
+import TopNavigationBar from "../components/TopNavigationBar";
+import PhotoList from "../components/PhotoList";
+import "../styles/HomeRoute.scss";
 
-import '../styles/HomeRoute.scss';
-
-const HomeRoute = () => {
+const HomeRoute = ({ topics, photos, favCount, onToggleFav }) => {
   return (
     <div className="home-route">
-      {/* Insert React */}
+      <TopNavigationBar topics={topics} favCount={favCount} />
+      <PhotoList photos={photos} onToggleFav={onToggleFav} />
     </div>
   );
 };
 
 export default HomeRoute;
+
+
