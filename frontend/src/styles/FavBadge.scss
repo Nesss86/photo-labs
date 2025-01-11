@@ -1,19 +1,27 @@
 .fav-badge {
   display: flex;
   align-items: center;
-  gap: 4px; /* Adjust spacing between icon and count */
+  position: relative; /* Ensure the dot is positioned relative to the badge */
+  gap: 4px; /* Adjust spacing if needed */
 
   &__icon {
     width: 24px;
     height: 24px;
+    color: #c80000; /* Keep the red heart color */
   }
 
-  &__count {
-    font-size: 16px; /* Adjust font size as needed */
-    font-weight: bold;
-    color: #c80000; /* Red color matching the heart */
+  &__notification {
+    position: absolute;
+    top: -5px; /* Adjust for proper alignment */
+    right: -5px; /* Position the dot in the top-right corner */
+    background-color: green; /* Notification dot color */
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    content: "";
   }
 }
+
 
 
 

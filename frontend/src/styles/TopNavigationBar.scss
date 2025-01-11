@@ -51,26 +51,35 @@
   &__fav-badge {
     display: flex;
     align-items: center;
-    gap: 5px; /* Add spacing between the icon and the counter */
+    position: relative;
+    font-size: 1.5rem;
 
-    svg {
-      width: 24px;
-      height: 24px;
-      fill: red; /* Keep the heart icon red */
+    .fav-badge__notification {
+      position: absolute;
+      top: 1px;
+      right: -3px;
+      width: 8px; /* Slightly larger for visibility */
+      height: 8px;
+      background-color: #39ff14; /* Electric green */
+      border-radius: 50%;
+      box-shadow: 0 0 8px 2px #39ff14; /* Glow effect */
+      animation: pulse 1.5s infinite; /* Optional pulsing effect */
     }
+  }
 
-    .fav-badge__count {
-      background-color: red;
-      color: white;
-      font-size: 12px; /* Adjust font size */
-      font-weight: bold;
-      border-radius: 12px; /* Rounded corners */
-      padding: 4px 6px; /* Add padding for a better appearance */
-      line-height: 1;
-      text-align: center;
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 0 8px 2px #39ff14;
+    }
+    50% {
+      box-shadow: 0 0 12px 4px #39ff14;
     }
   }
 }
+
+
+
+
 
 
 

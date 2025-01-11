@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import HomeRoute from "./routes/HomeRoute";
 import "./App.scss";
-import photosData from "./mocks/photos"; // Import mock data
-import topicsData from "./mocks/topics"; // Import mock data
+import photosData from "./mocks/photos";
+import topicsData from "./mocks/topics";
+import TopNavigationBar from "./components/TopNavigationBar";
 
 const App = () => {
-  const [photos, setPhotos] = useState(
-    photosData.map((photo) => ({ ...photo, isFav: false }))
-  );
+  const [photos, setPhotos] = useState(photosData);
 
-  // Toggle favorite status of a photo
   const toggleFav = (id) => {
     setPhotos((prevPhotos) =>
       prevPhotos.map((photo) =>
@@ -18,19 +16,22 @@ const App = () => {
     );
   };
 
+  const hasFavs = photos.some((photo) => photo.isFav);
+
   return (
     <div className="App">
       <HomeRoute
         topics={topicsData}
         photos={photos}
-        favCount={photos.filter((photo) => photo.isFav).length}
         onToggleFav={toggleFav}
       />
+      <TopNavigationBar topics={topicsData} hasFavs={hasFavs} />
     </div>
   );
 };
 
 export default App;
+
 
 
 
