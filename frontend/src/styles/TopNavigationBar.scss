@@ -51,24 +51,27 @@
   &__fav-badge {
     display: flex;
     align-items: center;
-    position: relative;
+    gap: 5px; /* Add spacing between the icon and the counter */
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: red; /* Keep the heart icon red */
+    }
 
     .fav-badge__count {
-      position: absolute;
-      top: -5px;
-      right: -5px;
       background-color: red;
       color: white;
-      font-size: 12px;
+      font-size: 12px; /* Adjust font size */
       font-weight: bold;
-      border-radius: 50%;
-      padding: 4px 6px;
+      border-radius: 12px; /* Rounded corners */
+      padding: 4px 6px; /* Add padding for a better appearance */
       line-height: 1;
-      min-width: 20px;
       text-align: center;
     }
   }
 }
+
 
 
 
