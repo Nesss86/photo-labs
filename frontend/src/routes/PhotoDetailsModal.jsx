@@ -5,7 +5,7 @@ import PhotoListItem from "../components/PhotoListItem";
 import PhotoFavButton from "../components/PhotoFavButton";
 
 const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
-  if (!photo) return null;
+  if (!photo) return null; // Ensure photo is valid
 
   return (
     <div className="photo-details-modal" onClick={onClose}>
@@ -14,22 +14,26 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
         onClick={(e) => e.stopPropagation()} // Prevent modal close on content click
       >
         {/* Close Button */}
-        <button className="photo-details-modal__close-button" onClick={onClose}>
+        <button
+          className="photo-details-modal__close-button"
+          onClick={onClose}
+        >
           <img src={closeSymbol} alt="Close modal" />
         </button>
 
         {/* Full-Size Photo Section */}
         <div className="photo-details-modal__main-photo">
+          {/* Favorite Button */}
           <PhotoFavButton
             selected={photo.isFav}
             onClick={(e) => {
-              e.stopPropagation();
-              onToggleFav(photo.id);
+              e.stopPropagation(); // Prevent modal close
+              onToggleFav(photo.id); // Toggle favorite
             }}
             className="photo-details-modal__fav-icon"
           />
           <img
-            src={`Image-${photo.id}-Full.jpeg`}
+            src={`Image-${photo.id}-Full.jpeg`} // Full-size image path
             alt={`Photo by ${photo.user.name}`}
             className="photo-details-modal__main-image"
           />
@@ -52,7 +56,7 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
         <div className="photo-details-modal__similar-photos">
           <h3>Similar Photos</h3>
           <div className="photo-details-modal__similar-list">
-            {similarPhotos && similarPhotos.map((similarPhoto) => (
+            {similarPhotos?.map((similarPhoto) => (
               <PhotoListItem
                 key={similarPhoto.id}
                 id={similarPhoto.id}
@@ -60,7 +64,7 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
                 username={similarPhoto.user.name}
                 profile={similarPhoto.user.profile}
                 isFav={similarPhoto.isFav}
-                onToggleFav={onToggleFav} // Ensure sync with global state
+                onToggleFav={onToggleFav} // Ensure global state sync
               />
             ))}
           </div>
@@ -71,5 +75,6 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
 };
 
 export default PhotoDetailsModal;
+
 
 
