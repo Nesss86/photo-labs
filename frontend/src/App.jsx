@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HomeRoute from "./routes/HomeRoute";
 import PhotoDetailsModal from "./routes/PhotoDetailsModal";
 import TopNavigationBar from "./components/TopNavigationBar";
@@ -14,28 +14,34 @@ const App = () => {
     photosData.some((photo) => photo.isFav)
   );
 
-  const recalculateHasFavs = (updatedPhotos) => {
-    setHasFavs(updatedPhotos.some((photo) => photo.isFav));
-  };
+  useEffect(() => {
+    setHasFavs(photos.some((photo) => photo.isFav));
+  }, [photos]);
 
   const toggleFav = (id) => {
-    setPhotos((prevPhotos) => {
-      const updatedPhotos = prevPhotos.map((photo) =>
+    setPhotos((prevPhotos) =>
+      prevPhotos.map((photo) =>
         photo.id === id ? { ...photo, isFav: !photo.isFav } : photo
-      );
+      )
+    );
 
-      recalculateHasFavs(updatedPhotos); // Recalculate `hasFavs`
+    // Update `selectedPhoto` if it matches the toggled photo
+    if (selectedPhoto && selectedPhoto.id === id) {
+      setSelectedPhoto((prev) => ({
+        ...prev,
+        isFav: !prev.isFav,
+      }));
+    }
 
-      // Update `selectedPhoto` if it matches the toggled photo
-      if (selectedPhoto && selectedPhoto.id === id) {
-        setSelectedPhoto((prev) => ({
-          ...prev,
-          isFav: !prev.isFav,
-        }));
-      }
-
-      return updatedPhotos;
-    });
+    // Update `similarPhotos` dynamically
+    if (selectedPhoto) {
+      const updatedSimilarPhotos = photos
+        .filter((p) => p.id !== selectedPhoto.id && p.topic === selectedPhoto.topic)
+        .map((photo) =>
+          photo.id === id ? { ...photo, isFav: !photo.isFav } : photo
+        );
+      setSimilarPhotos(updatedSimilarPhotos);
+    }
   };
 
   const openModal = (photo) => {
@@ -73,6 +79,7 @@ const App = () => {
 };
 
 export default App;
+
 
 
 

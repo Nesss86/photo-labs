@@ -21,15 +21,15 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
         {/* Full-Size Photo Section */}
         <div className="photo-details-modal__main-photo">
           <PhotoFavButton
-            selected={photo.isFav} // Reflect current favorite state
+            selected={photo.isFav}
             onClick={(e) => {
-              e.stopPropagation(); // Prevent modal close
-              onToggleFav(photo.id); // Update global state
+              e.stopPropagation();
+              onToggleFav(photo.id);
             }}
             className="photo-details-modal__fav-icon"
           />
           <img
-            src={`Image-${photo.id}-Full.jpeg`} // Full-size image
+            src={`Image-${photo.id}-Full.jpeg`}
             alt={`Photo by ${photo.user.name}`}
             className="photo-details-modal__main-image"
           />
@@ -60,7 +60,7 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
                 username={similarPhoto.user.name}
                 profile={similarPhoto.user.profile}
                 isFav={similarPhoto.isFav}
-                onToggleFav={onToggleFav} // Pass toggleFav to similar photos
+                onToggleFav={onToggleFav} // Ensure sync with global state
               />
             ))}
           </div>
@@ -71,3 +71,5 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
 };
 
 export default PhotoDetailsModal;
+
+
