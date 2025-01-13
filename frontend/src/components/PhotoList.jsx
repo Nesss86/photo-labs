@@ -2,7 +2,7 @@ import React from "react";
 import PhotoListItem from "./PhotoListItem";
 import "../styles/PhotoList.scss";
 
-const PhotoList = ({ photos, onToggleFav }) => {
+const PhotoList = ({ photos, onToggleFav, onPhotoClick }) => {
   return (
     <div className="photo-list">
       {photos.map((photo) => (
@@ -10,11 +10,12 @@ const PhotoList = ({ photos, onToggleFav }) => {
           key={photo.id}
           id={photo.id}
           location={photo.location}
-          imageSource={photo.urls.regular} // Use the correct field
+          imageSource={photo.urls.regular}
           username={photo.user.name}
           profile={photo.user.profile}
           isFav={photo.isFav}
           onToggleFav={onToggleFav}
+          onClick={() => onPhotoClick(photo)} // Pass photo to modal
         />
       ))}
     </div>
@@ -22,6 +23,7 @@ const PhotoList = ({ photos, onToggleFav }) => {
 };
 
 export default PhotoList;
+
 
 
 

@@ -3,7 +3,7 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 import { useFavContext } from "../context/FavContext";
 
-const PhotoListItem = ({ id, location, imageSource, username, profile }) => {
+const PhotoListItem = ({ id, location, imageSource, username, profile, onClick }) => {
   const { favorites, dispatch } = useFavContext();
   const isFavorited = favorites.includes(id);
 
@@ -12,8 +12,11 @@ const PhotoListItem = ({ id, location, imageSource, username, profile }) => {
   };
 
   return (
-    <div className="photo-list__item" id={`photo-${id}`}>
-      <PhotoFavButton selected={isFavorited} onClick={toggleFav} />
+    <div className="photo-list__item" id={`photo-${id}`} onClick={onClick}>
+      <PhotoFavButton selected={isFavorited} onClick={(e) => {
+        e.stopPropagation(); // Prevent modal from opening when toggling favorite
+        toggleFav();
+      }} />
       <img
         className="photo-list__image"
         src={imageSource}
@@ -37,6 +40,7 @@ const PhotoListItem = ({ id, location, imageSource, username, profile }) => {
 };
 
 export default PhotoListItem;
+
 
 
 
