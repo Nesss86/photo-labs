@@ -52,7 +52,7 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
         <div className="photo-details-modal__similar-photos">
           <h3>Similar Photos</h3>
           <div className="photo-details-modal__similar-list">
-            {similarPhotos.map((similarPhoto) => (
+            {similarPhotos && similarPhotos.map((similarPhoto) => (
               <PhotoListItem
                 key={similarPhoto.id}
                 id={similarPhoto.id}
