@@ -10,7 +10,7 @@ const PhotoList = ({ photos, onToggleFav, onPhotoClick }) => {
           key={photo.id}
           id={photo.id}
           location={photo.location}
-          imageSource={photo.urls.regular}
+          
           username={photo.user.name}
           profile={photo.user.profile}
           isFav={photo.isFav}
