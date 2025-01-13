@@ -1,8 +1,8 @@
 .photo-list__item {
   position: relative; /* Ensures child elements like the favorite button can be absolutely positioned */
-  margin: 24px;
-  padding: 10px;
-  border: 8px solid white; /* Thick white border */
+  margin: 16px;
+  padding: 8px;
+  border: 6px solid white; /* Thick white border */
   border-radius: 12px;
   background-color: #fff;
   max-width: fit-content;
@@ -18,18 +18,18 @@
 
   /* Vertical Stripe: Positioned near the top-left corner of the container */
   &::before {
-    top: -10px; /* Positioned at the container's top */
-    left: 20px; /* Offset inward from the left edge of the container */
-    width: 18px; /* Thickness of the stripe */
-    height: 50px; /* Length of the vertical stripe */
+    top: -8px; /* Positioned at the container's top */
+    left: 16px; /* Offset inward from the left edge of the container */
+    width: 14px; /* Thickness of the stripe */
+    height: 40px; /* Length of the vertical stripe */
   }
 
   /* Horizontal Stripe: Positioned near the top-left corner of the container */
   &::after {
-    top: 20px; /* Offset downward from the container's top */
-    left: -10px; /* Positioned at the container's left */
-    width: 50px; /* Length of the horizontal stripe */
-    height: 18px; /* Thickness of the stripe */
+    top: 16px; /* Offset downward from the container's top */
+    left: -8px; /* Positioned at the container's left */
+    width: 40px; /* Length of the horizontal stripe */
+    height: 14px; /* Thickness of the stripe */
   }
 }
 
@@ -47,6 +47,7 @@
   border-radius: 100%;
   vertical-align: middle;
   margin-right: 8px;
+  margin-top: 4px;
   width: 40px;
   height: 40px;
 }
@@ -56,7 +57,7 @@
 }
 
 .photo-list__user-info {
-  margin-top: 5px;
+  margin-top: -5px;
   font-weight: 700;
   font-size: 12px;
   margin-left: 8px;
