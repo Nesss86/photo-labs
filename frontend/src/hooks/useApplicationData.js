@@ -1,81 +1,95 @@
-import { useState } from "react";
-import photosData from "../mocks/photos"; // Import initial data
-import topicsData from "../mocks/topics"; // Import initial data
+import { useReducer } from "react";
+import photosData from "../mocks/photos";
+import topicsData from "../mocks/topics";
 
+// Initial State
+const initialState = {
+  photos: photosData,
+  topics: topicsData,
+  selectedPhoto: null,
+  similarPhotos: [],
+};
+
+// Reducer Function
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "TOGGLE_FAV":
+      return {
+        ...state,
+        photos: state.photos.map((photo) =>
+          photo.id === action.id ? { ...photo, isFav: !photo.isFav } : photo
+        ),
+        selectedPhoto:
+          state.selectedPhoto?.id === action.id
+            ? { ...state.selectedPhoto, isFav: !state.selectedPhoto.isFav }
+            : state.selectedPhoto,
+        similarPhotos: state.similarPhotos.map((photo) =>
+          photo.id === action.id ? { ...photo, isFav: !photo.isFav } : photo
+        ),
+      };
+
+    case "SELECT_PHOTO":
+      return {
+        ...state,
+        selectedPhoto: action.photo,
+        similarPhotos: state.photos.filter(
+          (p) => p.id !== action.photo.id && p.topic === action.photo.topic
+        ),
+      };
+
+    case "CLOSE_MODAL":
+      return {
+        ...state,
+        selectedPhoto: null,
+        similarPhotos: [],
+      };
+
+    case "LOAD_TOPIC":
+      return {
+        ...state,
+        photos: action.filteredPhotos,
+      };
+
+    default:
+      throw new Error(`Unhandled action type: ${action.type}`);
+  }
+};
+
+// Custom Hook
 const useApplicationData = () => {
-  // State Management
-  const [state, setState] = useState({
-    photos: photosData,
-    topics: topicsData,
-    selectedPhoto: null,
-    similarPhotos: [],
-  });
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  // Load Topics (Example Functionality)
+  // Action to toggle favorite
+  const updateToFavPhotoIds = (id) => {
+    dispatch({ type: "TOGGLE_FAV", id });
+  };
+
+  // Action to select a photo
+  const onPhotoSelect = (photo) => {
+    dispatch({ type: "SELECT_PHOTO", photo });
+  };
+
+  // Action to close the modal
+  const onClosePhotoDetailsModal = () => {
+    dispatch({ type: "CLOSE_MODAL" });
+  };
+
+  // Action to load a topic
   const onLoadTopic = (topic) => {
     const filteredPhotos = photosData.filter((photo) => photo.topic === topic);
-    setState((prev) => ({ ...prev, photos: filteredPhotos }));
+    dispatch({ type: "LOAD_TOPIC", filteredPhotos });
   };
 
-  // Update Favorite Photos
-  const updateToFavPhotoIds = (id) => {
-    setState((prev) => {
-      // Update photos
-      const updatedPhotos = prev.photos.map((photo) =>
-        photo.id === id ? { ...photo, isFav: !photo.isFav } : photo
-      );
-
-      // Update selectedPhoto if applicable
-      const updatedSelectedPhoto =
-        prev.selectedPhoto?.id === id
-          ? { ...prev.selectedPhoto, isFav: !prev.selectedPhoto.isFav }
-          : prev.selectedPhoto;
-
-      // Update similarPhotos dynamically
-      const updatedSimilarPhotos = prev.similarPhotos.map((photo) =>
-        photo.id === id ? { ...photo, isFav: !photo.isFav } : photo
-      );
-
-      return {
-        ...prev,
-        photos: updatedPhotos,
-        selectedPhoto: updatedSelectedPhoto,
-        similarPhotos: updatedSimilarPhotos,
-      };
-    });
-  };
-
-  // Open Photo Details Modal
-  const onPhotoSelect = (photo) => {
-    const similarPhotos = state.photos.filter(
-      (p) => p.id !== photo.id && p.topic === photo.topic
-    );
-    setState((prev) => ({
-      ...prev,
-      selectedPhoto: photo,
-      similarPhotos,
-    }));
-  };
-
-  // Close Photo Details Modal
-  const onClosePhotoDetailsModal = () => {
-    setState((prev) => ({
-      ...prev,
-      selectedPhoto: null,
-      similarPhotos: [],
-    }));
-  };
-
-  // Return the state and actions
   return {
     state,
-    onPhotoSelect,
     updateToFavPhotoIds,
-    onLoadTopic,
+    onPhotoSelect,
     onClosePhotoDetailsModal,
+    onLoadTopic,
   };
 };
 
 export default useApplicationData;
+
 
 
