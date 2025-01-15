@@ -1,86 +1,112 @@
-import { useReducer } from "react";
-import photosData from "../mocks/photos";
-import topicsData from "../mocks/topics";
+import { useReducer, useEffect } from "react";
+import axios from "axios";
 
-// Action Types
-const TOGGLE_FAV = "TOGGLE_FAV";
-const SELECT_PHOTO = "SELECT_PHOTO";
-const CLOSE_MODAL = "CLOSE_MODAL";
-const LOAD_TOPIC = "LOAD_TOPIC";
+const ACTIONS = {
+  SET_PHOTO_DATA: "SET_PHOTO_DATA",
+  SET_TOPICS: "SET_TOPICS",
+  LOAD_TOPIC_PHOTOS: "LOAD_TOPIC_PHOTOS",
+  TOGGLE_FAV: "TOGGLE_FAV",
+  SELECT_PHOTO: "SELECT_PHOTO",
+  CLOSE_MODAL: "CLOSE_MODAL",
+};
 
-// Initial State
 const initialState = {
-  photos: photosData,
-  topics: topicsData,
+  photos: [],
+  topics: [],
   selectedPhoto: null,
   similarPhotos: [],
 };
 
-// Reducer Function
 const reducer = (state, action) => {
   switch (action.type) {
-    case TOGGLE_FAV:
+    case ACTIONS.SET_PHOTO_DATA:
+      return { ...state, photos: action.payload.photos };
+
+    case ACTIONS.SET_TOPICS:
+      return { ...state, topics: action.payload.topics };
+
+    case ACTIONS.LOAD_TOPIC_PHOTOS:
+      return { ...state, photos: action.payload.photos };
+
+    case ACTIONS.TOGGLE_FAV:
       const updatedPhotos = state.photos.map((photo) =>
         photo.id === action.id ? { ...photo, isFav: !photo.isFav } : photo
       );
+      return { ...state, photos: updatedPhotos };
 
-      return {
-        ...state,
-        photos: updatedPhotos,
-        selectedPhoto: state.selectedPhoto
-          ? updatedPhotos.find((photo) => photo.id === state.selectedPhoto.id)
-          : null,
-        similarPhotos: state.similarPhotos.map((photo) =>
-          updatedPhotos.find((p) => p.id === photo.id)
-        ),
-      };
+    case ACTIONS.SELECT_PHOTO:
+      const similarPhotos = state.photos.filter(
+        (p) => p.id !== action.photo.id && p.topic === action.photo.topic
+      );
+      return { ...state, selectedPhoto: action.photo, similarPhotos };
 
-    case SELECT_PHOTO:
-      return {
-        ...state,
-        selectedPhoto: action.photo,
-        similarPhotos: state.photos.filter(
-          (p) => p.id !== action.photo.id && p.topic === action.photo.topic
-        ),
-      };
-
-    case CLOSE_MODAL:
-      return {
-        ...state,
-        selectedPhoto: null,
-        similarPhotos: [],
-      };
-
-    case LOAD_TOPIC:
-      return {
-        ...state,
-        photos: action.filteredPhotos,
-      };
+    case ACTIONS.CLOSE_MODAL:
+      return { ...state, selectedPhoto: null, similarPhotos: [] };
 
     default:
-      throw new Error(`Unhandled action type: ${action.type}`);
+      console.error(`Unhandled action type: ${action.type}`);
+      return state;
   }
 };
 
-// Custom Hook
 const useApplicationData = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  useEffect(() => {
+    // Fetch initial photo data
+    const fetchPhotos = axios
+      .get("/api/photos")
+      .then((res) => {
+        dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: { photos: res.data } });
+      })
+      .catch((err) => {
+        console.error("Error fetching photos:", err.message);
+      });
+
+    // Fetch topics data
+    const fetchTopics = axios
+      .get("/api/topics")
+      .then((res) => {
+        dispatch({ type: ACTIONS.SET_TOPICS, payload: { topics: res.data } });
+      })
+      .catch((err) => {
+        console.error("Error fetching topics:", err.message);
+      });
+
+    Promise.all([fetchPhotos, fetchTopics]).catch((err) =>
+      console.error("Error loading initial data:", err.message)
+    );
+  }, []);
+
   const updateToFavPhotoIds = (id) => {
-    dispatch({ type: TOGGLE_FAV, id });
+    dispatch({ type: ACTIONS.TOGGLE_FAV, id });
   };
 
   const onPhotoSelect = (photo) => {
-    dispatch({ type: SELECT_PHOTO, photo });
+    dispatch({ type: ACTIONS.SELECT_PHOTO, photo });
   };
 
   const onClosePhotoDetailsModal = () => {
-    dispatch({ type: CLOSE_MODAL });
+    dispatch({ type: ACTIONS.CLOSE_MODAL });
   };
 
   const onLoadTopic = (topic) => {
-    const filteredPhotos = photosData.filter((photo) => photo.topic === topic);
-    dispatch({ type: LOAD_TOPIC, filteredPhotos });
+    if (!topic || !topic.id) {
+      console.error("Invalid topic object passed to onLoadTopic:", topic);
+      return;
+    }
+
+    axios
+      .get(`/api/topics/photos/${topic.id}`)
+      .then((res) => {
+        dispatch({
+          type: ACTIONS.LOAD_TOPIC_PHOTOS,
+          payload: { photos: res.data },
+        });
+      })
+      .catch((err) => {
+        console.error(`Error fetching photos for topic ${topic.id}:`, err.message);
+      });
   };
 
   return {
@@ -93,7 +119,5 @@ const useApplicationData = () => {
 };
 
 export default useApplicationData;
-
-
 
 

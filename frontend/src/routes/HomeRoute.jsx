@@ -2,7 +2,7 @@ import React from "react";
 import PhotoList from "../components/PhotoList";
 import "../styles/HomeRoute.scss";
 
-const HomeRoute = ({ topics, photos, favCount, onToggleFav, onPhotoClick }) => {
+const HomeRoute = ({ topics, photos, onToggleFav, onPhotoClick }) => {
   return (
     <div className="home-route">
       <PhotoList
@@ -15,6 +15,14 @@ const HomeRoute = ({ topics, photos, favCount, onToggleFav, onPhotoClick }) => {
 };
 
 export default HomeRoute;
+
+
+
+
+
+
+
+
 
 
 

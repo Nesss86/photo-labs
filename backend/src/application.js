@@ -1,3 +1,6 @@
+const React = require("react");
+const { useEffect } = React;
+
 const fs = require("fs");
 const path = require("path");
 

@@ -8,24 +8,25 @@ import "./App.scss";
 const App = () => {
   const {
     state,
-    onPhotoSelect,
     updateToFavPhotoIds,
-    onLoadTopic,
+    onPhotoSelect,
     onClosePhotoDetailsModal,
+    onLoadTopic,
   } = useApplicationData();
+
+  const hasFavs = state.photos.some((photo) => photo.isFav);
 
   return (
     <div className="App">
       <TopNavigationBar
         topics={state.topics}
-        hasFavs={state.photos.some((photo) => photo.isFav)}
+        hasFavs={hasFavs} // Pass favorite status to FavBadge
         onLoadTopic={onLoadTopic}
       />
       <HomeRoute
-        topics={state.topics}
         photos={state.photos}
-        onPhotoClick={onPhotoSelect}
         onToggleFav={updateToFavPhotoIds}
+        onPhotoClick={onPhotoSelect}
       />
       {state.selectedPhoto && (
         <PhotoDetailsModal
@@ -40,6 +41,16 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
+
 
 
 

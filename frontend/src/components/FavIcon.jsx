@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const FavIcon = ({ selected }) => {
   return (
@@ -20,5 +20,7 @@ const FavIcon = ({ selected }) => {
 };
 
 export default FavIcon;
+
+
 
 

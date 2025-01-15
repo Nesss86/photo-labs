@@ -1,16 +1,15 @@
-import React from 'react';
-import TopicListItem from './TopicListItem';
-import '../styles/TopicList.scss';
+import React from "react";
+import TopicListItem from "./TopicListItem";
+import "../styles/TopicList.scss";
 
-const TopicList = ({ topics, activeTopic, onTopicClick }) => {
+const TopicList = ({ topics, onTopicClick }) => {
   return (
     <div className="topic-list">
       {topics.map((topic) => (
         <TopicListItem
-          key={topic.id} // Use unique ID
-          topic={topic} // Pass the full topic object
-          isActive={activeTopic === topic.slug} // Compare activeTopic with the slug
-          onClick={onTopicClick}
+          key={topic.id}
+          topic={topic}
+          onClick={() => onTopicClick(topic)} // Pass the topic to onLoadTopic
         />
       ))}
     </div>
@@ -18,6 +17,19 @@ const TopicList = ({ topics, activeTopic, onTopicClick }) => {
 };
 
 export default TopicList;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

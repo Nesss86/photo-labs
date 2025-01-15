@@ -1,18 +1,30 @@
-import React from 'react';
-import '../styles/TopicListItem.scss';
+import React from "react";
+import "../styles/TopicListItem.scss";
 
-const TopicListItem = ({ topic, isActive, onClick }) => {
+const TopicListItem = ({ topic, onClick }) => {
   return (
     <span
-      className={`topic-list-item ${isActive ? 'active' : ''}`}
-      onClick={() => onClick(topic)}
+      className="topic-list-item"
+      onClick={onClick} // Call the onClick handler
     >
-      {topic.title} {/* Ensure you're accessing the correct property */}
+      {topic.title}
     </span>
   );
 };
 
 export default TopicListItem;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
