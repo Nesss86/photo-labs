@@ -25,7 +25,7 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 
 
 
-## Technologies Used
+**Technologies Used**
 
 ### Frontend
 
