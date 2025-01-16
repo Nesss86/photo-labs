@@ -1,6 +1,6 @@
 # Photolabs: Your gateway to exploring stunning photography effortlessly!
 
-## Overview
+## **Overview**
 
 PhotoLabs is a dynamic web application built with React that allows users to explore, share, and interact with stunning photography. This project showcases my ability to build modern, responsive, and visually engaging user interfaces while leveraging React’s component-based architecture to create a seamless user experience.
 
@@ -26,44 +26,12 @@ Designed with SCSS, showcasing advanced CSS techniques like 🖌️ pseudo-eleme
 Tested with industry-standard tools (@testing-library/react) to ensure reliability and a bug-free experience.
 
 
-## Technologies Used
-
-**Frontend**
-
-⚛️ **React:** Built a dynamic and interactive user interface with reusable components.
+## **Screenshots**
 
 
-🎨 **SCSS:** Utilized advanced styling techniques, including mixins, variables, and pseudo-elements.
 
 
-🔗 **Axios:** Integrated APIs for fetching and managing photo data seamlessly.
 
-
-✅ **React Testing Library:** Ensured UI reliability with component tests.
-
-
----
-
-
-**Backend**
-
-🟢 **Node.js:** Powered the backend with a fast, scalable JavaScript runtime.
-
-
-🚀 **Express:** Developed RESTful APIs for handling user and photo data.
-
-
-📡 **Socket.io:** Enabled real-time communication for a live user experience.
-
-
-📋 **PostgreSQL:** Designed and managed relational databases for storing app data.
-
-
-**Development Tools**
-🔧 **Git and GitHub:** Version control for collaborative development and code management.
-
-
-💻 **VS Code:** Leveraged IDE tools and extensions for efficient coding.
 
 
 ## **Setup**
@@ -139,6 +107,47 @@ Follow these steps to start the application:
    npm start
    ```
 
-4. Open your browser and go to http://localhost:3000 to view the application.      
+4. Open your browser and go to http://localhost:3000 to view the application.
+
+
+## Technologies Used
+
+**Frontend**
+
+⚛️ **React:** Built a dynamic and interactive user interface with reusable components.
+
+
+🎨 **SCSS:** Utilized advanced styling techniques, including mixins, variables, and pseudo-elements.
+
+
+🔗 **Axios:** Integrated APIs for fetching and managing photo data seamlessly.
+
+
+✅ **React Testing Library:** Ensured UI reliability with component tests.
+
+
+---
+
+
+**Backend**
+
+🟢 **Node.js:** Powered the backend with a fast, scalable JavaScript runtime.
+
+
+🚀 **Express:** Developed RESTful APIs for handling user and photo data.
+
+
+📡 **Socket.io:** Enabled real-time communication for a live user experience.
+
+
+📋 **PostgreSQL:** Designed and managed relational databases for storing app data.
+
+
+**Development Tools**
+🔧 **Git and GitHub:** Version control for collaborative development and code management.
+
+
+💻 **VS Code:** Leveraged IDE tools and extensions for efficient coding.
+      
 
 
