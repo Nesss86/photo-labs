@@ -67,29 +67,32 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 💻 **VS Code:** Leveraged IDE tools and extensions for efficient coding.
 
 
-## Setup
-
 ## **Setup**
 
 Follow these steps to set up the project locally:
 
-### **Frontend Setup**
-| Dependency          | Purpose                                      | Installation Command             |
-|---------------------|----------------------------------------------|----------------------------------|
-| React               | Build the dynamic UI                        | `npm install react`             |
-| SCSS                | Advanced styling techniques                 | `npm install sass-loader`       |
-| Axios               | API integration for data management         | `npm install axios`             |
-| React Testing Library | Component testing for reliability         | `npm install @testing-library/react` |
+### **Frontend Setup** ✨  
+| **Dependency**        | **Purpose**                              | **Installation Command**        |
+|-----------------------|------------------------------------------|----------------------------------|
+| ⚛️ **React**          | Build the dynamic user interface         | `npm install react`             |
+| 🎨 **SCSS**           | Advanced styling techniques              | `npm install sass-loader`       |
+| 🔗 **Axios**          | API integration for data management      | `npm install axios`             |
+| ✅ **React Testing Library** | Component testing for reliability | `npm install @testing-library/react` |
 
-### **Backend Setup**
-| Dependency          | Purpose                                      | Installation Command             |
-|---------------------|----------------------------------------------|----------------------------------|
-| Express             | Framework for RESTful APIs                  | `npm install express`           |
-| PostgreSQL          | Database management                         | `npm install pg`                |
-| Socket.io           | Real-time communication                     | `npm install socket.io`         |
-| dotenv              | Environment variable configuration          | `npm install dotenv`            |
+---
+
+### **Backend Setup** 🛠️  
+| **Dependency**        | **Purpose**                              | **Installation Command**        |
+|-----------------------|------------------------------------------|----------------------------------|
+| 🚀 **Express**        | Framework for RESTful APIs               | `npm install express`           |
+| 📋 **PostgreSQL**     | Database management                      | `npm install pg`                |
+| 📡 **Socket.io**      | Real-time communication                  | `npm install socket.io`         |
+| 🔐 **dotenv**         | Environment variable configuration       | `npm install dotenv`            |
+
+---
 
 ### **Install All Dependencies**
+
 Run the following commands in each directory to install all necessary dependencies:
 
 #### **Frontend**
@@ -97,8 +100,10 @@ Run the following commands in each directory to install all necessary dependenci
 cd frontend
 npm install
 
-
-Install dependencies with `npm install` in each respective `/frontend` and `/backend`.
+#### **Backend**
+```bash
+cd frontend
+npm install
 
 ## [Frontend] Running Webpack Development Server
 
