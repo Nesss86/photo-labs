@@ -32,15 +32,34 @@ const reducer = (state, action) => {
       const updatedPhotos = state.photos.map((photo) =>
         photo.id === action.id ? { ...photo, isFav: !photo.isFav } : photo
       );
-      return { ...state, photos: updatedPhotos };
+
+      const updatedSelectedPhoto =
+        state.selectedPhoto?.id === action.id
+          ? { ...state.selectedPhoto, isFav: !state.selectedPhoto.isFav }
+          : state.selectedPhoto;
+
+      const updatedSimilarPhotos = state.similarPhotos.map((photo) =>
+        photo.id === action.id ? { ...photo, isFav: !photo.isFav } : photo
+      );
+
+      return {
+        ...state,
+        photos: updatedPhotos,
+        selectedPhoto: updatedSelectedPhoto,
+        similarPhotos: updatedSimilarPhotos,
+      };
 
     case ACTIONS.SELECT_PHOTO:
-      console.log("line 38", action.photo)
-      const singleSelectedPhoto = state.photos.find ((element) => element.id === action.photo)
+      const selectedPhoto = state.photos.find((p) => p.id === action.photoId);
       const similarPhotos = state.photos.filter(
-        (p) => p.id !== action.photo.id && p.topic === action.photo.topic
+        (p) => p.topic === selectedPhoto.topic && p.id !== selectedPhoto.id
       );
-      return { ...state, selectedPhoto: singleSelectedPhoto, similarPhotos };
+
+      return {
+        ...state,
+        selectedPhoto,
+        similarPhotos,
+      };
 
     case ACTIONS.CLOSE_MODAL:
       return { ...state, selectedPhoto: null, similarPhotos: [] };
@@ -84,8 +103,8 @@ const useApplicationData = () => {
     dispatch({ type: ACTIONS.TOGGLE_FAV, id });
   };
 
-  const onPhotoSelect = (photo) => {
-    dispatch({ type: ACTIONS.SELECT_PHOTO, photo });
+  const onPhotoSelect = (photoId) => {
+    dispatch({ type: ACTIONS.SELECT_PHOTO, photoId });
   };
 
   const onClosePhotoDetailsModal = () => {
@@ -121,5 +140,7 @@ const useApplicationData = () => {
 };
 
 export default useApplicationData;
+
+
 
 

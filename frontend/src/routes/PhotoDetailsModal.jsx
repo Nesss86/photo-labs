@@ -5,8 +5,7 @@ import PhotoListItem from "../components/PhotoListItem";
 import PhotoFavButton from "../components/PhotoFavButton";
 
 const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
-  if (!photo) return null; // Ensure photo is valid
-  console.log(photo)
+  if (!photo) return null;
 
   return (
     <div className="photo-details-modal" onClick={onClose}>
@@ -57,16 +56,16 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
         <div className="photo-details-modal__similar-photos">
           <h3>Similar Photos</h3>
           <div className="photo-details-modal__similar-list">
-            {photo.similar_photos.map((similarPhoto) => (
+            {similarPhotos.map((similarPhoto) => (
               <PhotoListItem
                 key={similarPhoto.id}
                 id={similarPhoto.id}
                 location={similarPhoto.location}
                 username={similarPhoto.user.name}
                 profile={similarPhoto.user.profile}
-                isFav={similarPhoto.isFav}
                 imageSource={similarPhoto.urls.regular}
-                onToggleFav={onToggleFav} // Ensure global state sync
+                isFav={similarPhoto.isFav}
+                onToggleFav={onToggleFav} // Ensure sync with global state
               />
             ))}
           </div>
@@ -77,6 +76,8 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
 };
 
 export default PhotoDetailsModal;
+
+
 
 
 

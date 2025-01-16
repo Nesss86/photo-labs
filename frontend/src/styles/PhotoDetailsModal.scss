@@ -92,3 +92,45 @@
   gap: 16px;
   justify-content: center;
 }
+
+.photo-details-modal__similar-item {
+  position: relative; /* Needed for fav icon positioning */
+  width: 140px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px #d3d3d3;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.photo-details-modal__similar-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.photo-details-modal__similar-fav-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1100;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  color: red;
+}
+
+.photo-details-modal__similar-user-details {
+  padding: 8px;
+  text-align: center;
+}
+
+.photo-details-modal__similar-user-details p {
+  margin: 4px 0;
+  font-size: 12px;
+}
+
