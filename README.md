@@ -30,37 +30,27 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 
 **Main Page with Notification**
 ![Main Page](screenshots/Main_Page_Notification.png)
-
+---
 **People Category**
 ![People Page](screenshots/People.png)
-
+---
 **Nature Category**
 ![Nature Page](screenshots/Nature.png)
-
+---
 **Travel Category**
 ![Travel Page](screenshots/Travel.png)
-
+---
 **Animals Category**
 ![Animals Page](screenshots/Animals.png)
-
+---
 **Fashion Cateogry**
 ![Fashion Page](screenshots/Fashion.png)
-
+---
 **Modal With Notification**
 ![Modal With Notification Page](screenshots/Modal_With_Notification.png)
-
+---
 **Similar Photos**
 ![Similar Photos Page](screenshots/Similar_Photos.png)
-
-
-
-
-
-
-
-
-
-
 
 
 ## **Setup**
