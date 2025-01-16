@@ -100,6 +100,7 @@ Run the following commands in each directory to install all necessary dependenci
 ```sh
 cd frontend
 npm install
+npm start
 ```
 
 #### **Backend - Running Backend Server**
@@ -107,6 +108,7 @@ npm install
 ```sh
 cd backend
 npm install
+npm start
 ```
 
 
