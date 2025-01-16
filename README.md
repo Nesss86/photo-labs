@@ -94,22 +94,23 @@ Follow these steps to set up the project locally:
 
 Run the following commands in each directory to install all necessary dependencies:
 
-#### **Frontend - Running Webpack Development Server**
 
-```sh
-cd frontend
-npm install
-```
-
-#### **Backend - Running Backend Server**
+#### **Backend - Running Backend Server**🛠️
 
 ```sh
 cd backend
 npm install
 ```
-
-
 Read `backend/readme` for further setup details.
+
+
+#### **Frontend - Running Webpack Development Server**✨
+
+```sh
+cd frontend
+npm install
+```
+Read frontend/readme for further setup details.
 
 ## **Running the Application**
 
@@ -124,13 +125,20 @@ Follow these steps to start the application:
     ```bash
     npm start
     ```
-    
-
 3. The backend server should now be running on http://localhost:<port> (replace <port> with the port specified in your environment configuration).
 
 ### **2. Start the Frontend** ✨
-1. Navigate to the `frontend` directory:
+1. Open a new terminal window
+
+2. Navigate to the `frontend` directory:
    ```bash
    cd frontend
+
+3. Start the React development server:
+   ```bash
+   npm start
+   ```
+
+4. Open your browser and go to http://localhost:3000 to view the application.      
 
 
