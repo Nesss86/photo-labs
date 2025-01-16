@@ -110,7 +110,7 @@ Read `backend/readme` for further setup details.
 cd frontend
 npm install
 ```
-Read frontend/readme for further setup details.
+Read `frontend/readme` for further setup details.
 
 ## **Running the Application**
 
