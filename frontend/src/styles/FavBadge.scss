@@ -10,16 +10,30 @@
     color: #c80000; /* Keep the red heart color */
   }
 
-  &__notification {
-    position: absolute;
-    top: 1px; /* Adjust for proper alignment */
-    right: -3px; /* Position the dot in the top-right corner */
-    background-color: greenyellow; /* Notification dot color */
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-    content: "";
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+    }
+    50% {
+      box-shadow: 0 0 15px #39ff14, 0 0 30px #39ff14;
+    }
   }
+  
+  &__notification {
+      position: absolute;
+      top: 1px;
+      right: -3px;
+      background-color: #39ff14;
+      border-radius: 50%;
+      width: 8px;
+      height: 8px;
+      content: "";
+      box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+  
+      /* Add pulsing animation */
+      animation: pulse 1.5s infinite;
+    }
+  
 }
 
 
