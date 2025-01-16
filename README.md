@@ -28,7 +28,9 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 
 ## **Screenshots**
 
-![Main Page](https://github.com/Nesss86/photo-labs/blob/main/screenshots/Main_Page_Notification.png)
+![Main Page
+(https://raw.githubusercontent.com/Nesss86/photolabs/main/screenshots/Main_Page_Notification.png)
+
 
 
 
