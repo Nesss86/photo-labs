@@ -11,7 +11,7 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
     <div className="photo-details-modal" onClick={onClose}>
       <div
         className="photo-details-modal__content"
-        onClick={(e) => e.stopPropagation()} // Prevent modal close on content click
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
@@ -27,13 +27,13 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
           <PhotoFavButton
             selected={photo.isFav}
             onClick={(e) => {
-              e.stopPropagation(); // Prevent modal close
-              onToggleFav(photo.id); // Toggle favorite
+              e.stopPropagation(); 
+              onToggleFav(photo.id); 
             }}
             className="photo-details-modal__fav-icon"
           />
           <img
-            src={photo.urls.full} // Full-size image path
+            src={photo.urls.full} 
             alt={`Photo by ${photo.user.name}`}
             className="photo-details-modal__main-image"
           />

@@ -5,7 +5,7 @@ const TopicListItem = ({ topic, onClick }) => {
   return (
     <span
       className="topic-list-item"
-      onClick={onClick} // Call the onClick handler
+      onClick={onClick} 
     >
       {topic.title}
     </span>
