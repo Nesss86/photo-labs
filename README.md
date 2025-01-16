@@ -1,4 +1,4 @@
-# Photolabs
+# Photolabs: Your gateway to exploring stunning photography effortlessly!
 
 PhotoLabs is a dynamic web application built with React that allows users to explore, share, and interact with stunning photography. This project showcases my ability to build modern, responsive, and visually engaging user interfaces while leveraging React’s component-based architecture to create a seamless user experience.
 
