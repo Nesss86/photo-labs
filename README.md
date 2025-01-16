@@ -47,7 +47,7 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 
 
 
-## Backend
+**Backend**
 
 🟢 **Node.js:** Powered the backend with a fast, scalable JavaScript runtime.
 
