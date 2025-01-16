@@ -110,11 +110,5 @@ npm install
 ```
 
 
-```sh
-cd frontend
-npm start
-```
-
-
 Read `backend/readme` for further setup details.
 
