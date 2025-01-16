@@ -123,6 +123,7 @@ Follow these steps to start the application:
 2. Start the server:
     ```bash
     npm start
+    ```
     
 
 3. The backend server should now be running on http://localhost:<port> (replace <port> with the port specified in your environment configuration).
