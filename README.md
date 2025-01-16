@@ -51,6 +51,7 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 ---
 **Similar Photos**
 ![Similar Photos Page](screenshots/Similar_Photos.png)
+---
 
 
 ## **Setup**
