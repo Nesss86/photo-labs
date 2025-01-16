@@ -29,16 +29,24 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 
 **Frontend**
 
-⚛️ **React:** Built a dynamic and interactive user interface with reusable components.<br>
+⚛️ **React:** Built a dynamic and interactive user interface with reusable components.
 
 
-🎨 **SCSS:** Utilized advanced styling techniques, including mixins, variables, and pseudo-elements.<br>
 
 
-🔗 **Axios:** Integrated APIs for fetching and managing photo data seamlessly.<br>
+🎨 **SCSS:** Utilized advanced styling techniques, including mixins, variables, and pseudo-elements.
 
 
-✅ **React Testing Library:** Ensured UI reliability with component tests.<br>
+
+
+🔗 **Axios:** Integrated APIs for fetching and managing photo data seamlessly.
+
+
+
+
+✅ **React Testing Library:** Ensured UI reliability with component tests.
+
+
 
 
 **Backend**
