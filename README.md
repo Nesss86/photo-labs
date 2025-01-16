@@ -25,11 +25,11 @@ Designed with SCSS, showcasing advanced CSS techniques like 🖌️ pseudo-eleme
 ✅ **Thorough Testing**
 Tested with industry-standard tools (@testing-library/react) to ensure reliability and a bug-free experience.
 
-
+---
 
 ## Technologies Used
 
-- **Frontend**
+**Frontend**
 
 ⚛️ **React:** Built a dynamic and interactive user interface with reusable components.
 
@@ -43,8 +43,7 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 ✅ **React Testing Library:** Ensured UI reliability with component tests.
 
 
-
-
+---
 
 
 
