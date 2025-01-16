@@ -25,9 +25,9 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 
 
 
-**Technologies Used**
+## Technologies Used
 
-### Frontend
+## Frontend
 
 ⚛️ **React:** Built a dynamic and interactive user interface with reusable components.
 
@@ -45,7 +45,8 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 
 
 
-### Backend
+
+## Backend
 
 🟢 **Node.js:** Powered the backend with a fast, scalable JavaScript runtime.
 
