@@ -163,6 +163,7 @@ Follow these steps to start the application:
 
 
 **Development Tools**
+
 🔧 **Git and GitHub:** Version control for collaborative development and code management.
 
 
