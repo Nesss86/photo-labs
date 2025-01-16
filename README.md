@@ -27,9 +27,9 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 
 
 
-**Technologies Used**
+## Technologies Used
 
-## Frontend
+- **Frontend**
 
 ⚛️ **React:** Built a dynamic and interactive user interface with reusable components.
 
