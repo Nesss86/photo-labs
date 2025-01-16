@@ -35,10 +35,12 @@ const reducer = (state, action) => {
       return { ...state, photos: updatedPhotos };
 
     case ACTIONS.SELECT_PHOTO:
+      console.log("line 38", action.photo)
+      const singleSelectedPhoto = state.photos.find ((element) => element.id === action.photo)
       const similarPhotos = state.photos.filter(
         (p) => p.id !== action.photo.id && p.topic === action.photo.topic
       );
-      return { ...state, selectedPhoto: action.photo, similarPhotos };
+      return { ...state, selectedPhoto: singleSelectedPhoto, similarPhotos };
 
     case ACTIONS.CLOSE_MODAL:
       return { ...state, selectedPhoto: null, similarPhotos: [] };

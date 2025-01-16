@@ -6,6 +6,7 @@ import PhotoFavButton from "../components/PhotoFavButton";
 
 const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
   if (!photo) return null; // Ensure photo is valid
+  console.log(photo)
 
   return (
     <div className="photo-details-modal" onClick={onClose}>
@@ -33,7 +34,7 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
             className="photo-details-modal__fav-icon"
           />
           <img
-            src={`Image-${photo.id}-Full.jpeg`} // Full-size image path
+            src={photo.urls.full} // Full-size image path
             alt={`Photo by ${photo.user.name}`}
             className="photo-details-modal__main-image"
           />
@@ -56,7 +57,7 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
         <div className="photo-details-modal__similar-photos">
           <h3>Similar Photos</h3>
           <div className="photo-details-modal__similar-list">
-            {similarPhotos?.map((similarPhoto) => (
+            {photo.similar_photos.map((similarPhoto) => (
               <PhotoListItem
                 key={similarPhoto.id}
                 id={similarPhoto.id}
@@ -64,6 +65,7 @@ const PhotoDetailsModal = ({ photo, onClose, onToggleFav, similarPhotos }) => {
                 username={similarPhoto.user.name}
                 profile={similarPhoto.user.profile}
                 isFav={similarPhoto.isFav}
+                imageSource={similarPhoto.urls.regular}
                 onToggleFav={onToggleFav} // Ensure global state sync
               />
             ))}

@@ -12,12 +12,12 @@
 
   &__notification {
     position: absolute;
-    top: -5px; /* Adjust for proper alignment */
-    right: -5px; /* Position the dot in the top-right corner */
-    background-color: green; /* Notification dot color */
+    top: 1px; /* Adjust for proper alignment */
+    right: -3px; /* Position the dot in the top-right corner */
+    background-color: greenyellow; /* Notification dot color */
     border-radius: 50%;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     content: "";
   }
 }
