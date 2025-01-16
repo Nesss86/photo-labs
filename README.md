@@ -95,28 +95,26 @@ Follow these steps to set up the project locally:
 
 Run the following commands in each directory to install all necessary dependencies:
 
-#### **Frontend**
-```bash
-cd frontend
-npm install
-
-#### **Backend**
-```bash
-cd frontend
-npm install
-
-## [Frontend] Running Webpack Development Server
+#### **Frontend - Running Webpack Development Server**
 
 ```sh
 cd frontend
-npm start
+npm install
 ```
 
-## [Backend] Running Backend Server
-
-Read `backend/readme` for further setup details.
+#### **Backend - Running Backend Server**
 
 ```sh
 cd backend
+npm install
+```
+
+
+```sh
+cd frontend
 npm start
 ```
+
+
+Read `backend/readme` for further setup details.
+
