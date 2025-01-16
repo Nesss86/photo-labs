@@ -28,7 +28,7 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 
 ## **Screenshots**
 
-![Main Page](/screenshots/Main_Page_ Notification.png)
+![Main Page](screenshots/Main_Page_ Notification.png)
 
 
 
