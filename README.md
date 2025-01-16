@@ -100,7 +100,6 @@ Run the following commands in each directory to install all necessary dependenci
 ```sh
 cd frontend
 npm install
-npm start
 ```
 
 #### **Backend - Running Backend Server**
@@ -108,9 +107,29 @@ npm start
 ```sh
 cd backend
 npm install
-npm start
 ```
 
 
 Read `backend/readme` for further setup details.
+
+## **Running the Application**
+
+Follow these steps to start the application:
+
+### **1. Start the Backend** 🛠️
+1. Navigate to the `backend` directory:
+   ```bash
+   cd backend
+
+2. Start the server:
+    ```bash
+    npm start
+       
+3. The backend server should now be running on http://localhost:<port> (replace <port> with the port specified in your environment configuration).
+
+### **2. Start the Frontend** ✨
+1. Navigate to the `frontend` directory:
+   ```bash
+   cd frontend
+
 
