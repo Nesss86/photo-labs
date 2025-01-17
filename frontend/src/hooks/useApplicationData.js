@@ -15,6 +15,7 @@ const ACTIONS = {
 const initialState = {
   photos: [], // List of all photos
   topics: [], // List of topics
+  favorites: [], // Array of favorite photo IDs
   selectedPhoto: null, // Photo currently being viewed in detail
   similarPhotos: [], // Photos related to the selected photo
 };
@@ -23,8 +24,12 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case ACTIONS.SET_PHOTO_DATA:
-      // Update state with the fetched photo data
-      return { ...state, photos: action.payload.photos };
+      // Initialize isFav property for photos based on favorites
+      const initializedPhotos = action.payload.photos.map((photo) => ({
+        ...photo,
+        isFav: state.favorites.includes(photo.id),
+      }));
+      return { ...state, photos: initializedPhotos };
 
     case ACTIONS.SET_TOPICS:
       // Update state with the fetched topics
@@ -32,13 +37,21 @@ const reducer = (state, action) => {
 
     case ACTIONS.LOAD_TOPIC_PHOTOS:
       // Replace photos with those matching the selected topic
-      return { ...state, photos: action.payload.photos };
+      const topicPhotos = action.payload.photos.map((photo) => ({
+        ...photo,
+        isFav: state.favorites.includes(photo.id),
+      }));
+      return { ...state, photos: topicPhotos };
 
     case ACTIONS.TOGGLE_FAV:
       // Toggle favorite status for a photo in all relevant arrays
       const updatedPhotos = state.photos.map((photo) =>
         photo.id === action.id ? { ...photo, isFav: !photo.isFav } : photo
       );
+
+      const updatedFavorites = state.favorites.includes(action.id)
+        ? state.favorites.filter((favId) => favId !== action.id) // Remove from favorites
+        : [...state.favorites, action.id]; // Add to favorites
 
       const updatedSelectedPhoto =
         state.selectedPhoto?.id === action.id
@@ -52,6 +65,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         photos: updatedPhotos,
+        favorites: updatedFavorites,
         selectedPhoto: updatedSelectedPhoto,
         similarPhotos: updatedSimilarPhotos,
       };
@@ -83,6 +97,9 @@ const reducer = (state, action) => {
 const useApplicationData = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  console.log("Global photos in state:", state.photos);
+  console.log("Global favorites in state:", state.favorites);
+
   // Fetch initial data when the component mounts
   useEffect(() => {
     const fetchPhotos = axios
@@ -103,7 +120,6 @@ const useApplicationData = () => {
         console.error("Error fetching topics:", err.message);
       });
 
-    // Ensure both requests resolve
     Promise.all([fetchPhotos, fetchTopics]).catch((err) =>
       console.error("Error loading initial data:", err.message)
     );
@@ -154,8 +170,5 @@ const useApplicationData = () => {
 };
 
 export default useApplicationData;
-
-
-
 
 
