@@ -50,8 +50,8 @@ const reducer = (state, action) => {
       );
 
       const updatedFavorites = state.favorites.includes(action.id)
-        ? state.favorites.filter((favId) => favId !== action.id) // Remove from favorites
-        : [...state.favorites, action.id]; // Add to favorites
+        ? state.favorites.filter((favId) => favId !== action.id) 
+        : [...state.favorites, action.id]; 
 
       const updatedSelectedPhoto =
         state.selectedPhoto?.id === action.id

@@ -27,7 +27,7 @@ const PhotoListItem = ({
       />
       <img
         className="photo-list__image"
-        src={imageSource} // Using imageSource prop
+        src={imageSource} 
         alt={`Photo by ${username}`}
       />
       <div className="photo-list__user-details">
