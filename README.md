@@ -29,28 +29,28 @@ Tested with industry-standard tools (@testing-library/react) to ensure reliabili
 ## **Screenshots**
 
 **Main Page with Notification**
-![Main Page](screenshots/Main_Page_Notification.png)
+![Main Page](screenshots/Main_Page_Notification1.png)
 ---
 **People Category**
-![People Page](screenshots/People.png)
+![People Page](screenshots/People1.png)
 ---
 **Nature Category**
-![Nature Page](screenshots/Nature.png)
+![Nature Page](screenshots/Nature1.png)
 ---
 **Travel Category**
-![Travel Page](screenshots/Travel.png)
+![Travel Page](screenshots/Travel1.png)
 ---
 **Animals Category**
-![Animals Page](screenshots/Animals.png)
+![Animals Page](screenshots/Animals1.png)
 ---
 **Fashion Cateogry**
-![Fashion Page](screenshots/Fashion.png)
+![Fashion Page](screenshots/Fashion1.png)
 ---
 **Modal With Notification**
-![Modal With Notification Page](screenshots/Modal_With_Notification.png)
+![Modal With Notification Page](screenshots/Modal_With_Notification1.png)
 ---
 **Similar Photos**
-![Similar Photos Page](screenshots/Similar_Photos.png)
+![Similar Photos Page](screenshots/Similar_Photos1.png)
 ---
 
 
