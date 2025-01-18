@@ -97,9 +97,6 @@ const reducer = (state, action) => {
 const useApplicationData = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log("Global photos in state:", state.photos);
-  console.log("Global favorites in state:", state.favorites);
-
   // Fetch initial data when the component mounts
   useEffect(() => {
     const fetchPhotos = axios

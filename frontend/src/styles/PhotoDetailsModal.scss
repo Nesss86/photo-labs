@@ -44,12 +44,13 @@
   height: 500px; /* Ensure proper scaling for full-size image */
   object-fit: cover; /* Maintain aspect ratio */
   margin: 0 auto;
+  border-radius: 8px 8px 8px 8px;
 }
 
 .photo-details-modal__fav-icon {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 20px;
+  right: 20px;
   z-index: 1100;
   width: 24px; /* Appropriately sized */
   height: 24px;

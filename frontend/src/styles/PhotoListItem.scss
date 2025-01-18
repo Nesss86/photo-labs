@@ -7,30 +7,6 @@
   background-color: #fff;
   max-width: fit-content;
   box-shadow: 0 0 0 1px #d3d3d3; /* Thin grey outline */
-
-  /* Add independent corner stripes */
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    background-color: #d3d3d3; /* Grey stripe color */
-  }
-
-  /* Vertical Stripe: Positioned near the top-left corner of the container */
-  &::before {
-    top: -8px; /* Positioned at the container's top */
-    left: 16px; /* Offset inward from the left edge of the container */
-    width: 14px; /* Thickness of the stripe */
-    height: 40px; /* Length of the vertical stripe */
-  }
-
-  /* Horizontal Stripe: Positioned near the top-left corner of the container */
-  &::after {
-    top: 16px; /* Offset downward from the container's top */
-    left: -8px; /* Positioned at the container's left */
-    width: 40px; /* Length of the horizontal stripe */
-    height: 14px; /* Thickness of the stripe */
-  }
 }
 
 .photo-list__image {
